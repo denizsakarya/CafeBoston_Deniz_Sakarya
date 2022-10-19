@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.msTop = new System.Windows.Forms.MenuStrip();
-            this.lvwTables = new System.Windows.Forms.ListView();
             this.tsmiProducts = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOrderHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvwTables = new System.Windows.Forms.ListView();
+            this.imlTable = new System.Windows.Forms.ImageList(this.components);
             this.msTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,14 +49,6 @@
             this.msTop.TabIndex = 0;
             this.msTop.Text = "menuStrip1";
             // 
-            // lvwTables
-            // 
-            this.lvwTables.Location = new System.Drawing.Point(0, 27);
-            this.lvwTables.Name = "lvwTables";
-            this.lvwTables.Size = new System.Drawing.Size(800, 422);
-            this.lvwTables.TabIndex = 1;
-            this.lvwTables.UseCompatibleStateImageBehavior = false;
-            // 
             // tsmiProducts
             // 
             this.tsmiProducts.Name = "tsmiProducts";
@@ -65,6 +60,25 @@
             this.tsmiOrderHistory.Name = "tsmiOrderHistory";
             this.tsmiOrderHistory.Size = new System.Drawing.Size(90, 20);
             this.tsmiOrderHistory.Text = "Order History";
+            this.tsmiOrderHistory.Click += new System.EventHandler(this.tsmiOrderHistory_Click);
+            // 
+            // lvwTables
+            // 
+            this.lvwTables.LargeImageList = this.imlTable;
+            this.lvwTables.Location = new System.Drawing.Point(0, 27);
+            this.lvwTables.Name = "lvwTables";
+            this.lvwTables.Size = new System.Drawing.Size(800, 422);
+            this.lvwTables.TabIndex = 1;
+            this.lvwTables.UseCompatibleStateImageBehavior = false;
+            this.lvwTables.DoubleClick += new System.EventHandler(this.lvwTables_DoubleClick);
+            // 
+            // imlTable
+            // 
+            this.imlTable.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imlTable.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlTable.ImageStream")));
+            this.imlTable.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlTable.Images.SetKeyName(0, "empty");
+            this.imlTable.Images.SetKeyName(1, "full");
             // 
             // MainForm
             // 
@@ -89,5 +103,6 @@
         private ListView lvwTables;
         private ToolStripMenuItem tsmiProducts;
         private ToolStripMenuItem tsmiOrderHistory;
+        private ImageList imlTable;
     }
 }
