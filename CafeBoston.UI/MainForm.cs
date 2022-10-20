@@ -70,5 +70,10 @@ namespace CafeBoston.UI
         {
             new OrderHistoryForm(db).ShowDialog();
         }
+
+        private void tsmiProducts_Click(object sender, EventArgs e)
+        {
+            new ProductForm(db).ShowDialog();
+        }
     }
 }
