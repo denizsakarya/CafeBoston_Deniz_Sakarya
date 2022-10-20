@@ -175,6 +175,7 @@
             this.btnMove.TabIndex = 8;
             this.btnMove.Text = "Move";
             this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // label3
             // 
